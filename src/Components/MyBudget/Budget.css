@@ -1,0 +1,14 @@
+.budget-title{
+    text-align: center;
+    font-size: 2rem;
+    padding: 20px 0;
+    font-family: 'Rubik Dirt', cursive;
+}
+.budget-value{
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Rubik Dirt', cursive;
+    background: #3d7237;
+    opacity: 0.9;
+    color: #ddea54;
+}

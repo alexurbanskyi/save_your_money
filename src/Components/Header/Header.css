@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    background: #3d7237;
+    opacity: 0.9;
+    padding: 10px 0;
+
+}
+.header a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #ddea54;
+    cursor: pointer;
+
+    font-family: 'Rubik Burned', cursive;
+
+}
+

@@ -1,0 +1,37 @@
+.coast-title {
+    text-align: center;
+    font-size: 2rem;
+    padding: 20px 0;
+    font-family: 'Rubik Dirt', cursive;
+}
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.input{
+    background: none;
+    border: none;
+    border-bottom: 2px solid black ;
+    font-family: 'DynaPuff', cursive;
+    width: 150px;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 5px;
+
+}
+::placeholder {
+    font-size: 1rem;
+}
+input:focus {
+
+    border-bottom: 2px solid black ;
+    outline: none;
+}
+.input-title{
+    font-size: 1.9rem;
+    font-family: 'DynaPuff', cursive;
+    text-align: center;
+    padding: 10px 0;
+}
