@@ -6,15 +6,19 @@ function  MyPurchase(props) {
     const [price, setPrice] = useState(null)
     const [category, setCategory] = useState(null)
     const [type, setType] = useState(null)
+    const [date, setDate] = useState(null)
 
     console.log('price ---->', price)
     console.log('categor ---->', category)
     console.log('type ---->', type)
+    console.log('date----->', date)
 
     return (
         <div className='coast'>
             <div className='coast-title'> NEW PURCHASE</div>
             <div className='input-wrapper'>
+                <p className='input-title'>DATE</p>
+                <input type='date' onChange={(e)=>setDate(e.target.value)}/>
                 <p className='input-title'>PRICE</p>
                 <input className='input' placeholder='How much . . .' value={price} onChange={(e) => setPrice(e.target.value)} />
                 <p className='input-title'>CATEGORY</p>
