@@ -18,7 +18,7 @@ function  MyPurchase(props) {
             <div className='coast-title'> NEW PURCHASE</div>
             <div className='input-wrapper'>
                 <p className='input-title'>DATE</p>
-                <input type='date' onChange={(e)=>setDate(e.target.value)}/>
+                <input className='input' type='date' onChange={(e)=>setDate(e.target.value)}/>
                 <p className='input-title'>PRICE</p>
                 <input className='input' placeholder='How much . . .' value={price} onChange={(e) => setPrice(e.target.value)} />
                 <p className='input-title'>CATEGORY</p>
