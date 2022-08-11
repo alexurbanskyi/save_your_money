@@ -2,8 +2,8 @@ import './App.css';
 import {Route, Routes, Link} from 'react-router-dom'
 
 import MyIncome from "./Components/MyIncome/MyIncome";
-import MyCoasts from "./Components/MyCoasts/MyCoasts";
-import MyBudget from "./Components/MyBudget/MyBudget";
+import MyPurchase from "./Components/MyPurchase/MyPurchase";
+import MyCosts from "./Components/MyCosts/MyCosts";
 import Layout from "./Components/Layout/Layout";
 
 
@@ -14,9 +14,9 @@ function App() {
 
         <Routes>
             <Route path='/' element={<Layout/>}>
-                <Route index element={ <MyBudget/>}/>
-                <Route path='/coasts' element={ <MyCoasts/>}/>
-                <Route path='/income' element={ <MyIncome/>}/>
+                <Route index element={ <MyCosts/>}/>
+                {/* <Route path='/income' element={ <MyIncome/>}/> */}
+                <Route path='/purchase' element={ <MyPurchase/>}/>
             </Route>
 
         </Routes>

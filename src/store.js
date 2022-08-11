@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import budgetReducer from './Slices/BudgetSlice'
+import costsReducer from './Slices/costsSlice'
 
 export const store = configureStore({
     reducer:{
-        budget: budgetReducer,
+       costs: costsReducer,
     }
 })

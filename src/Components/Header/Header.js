@@ -5,9 +5,9 @@ import './Header.css'
 function Header(props) {
     return (
         <header className='header'>
-            <Link className='header-link' to='/'>Budget</Link>
-            <Link to='/income'>Income</Link>
-            <Link to='/coasts'>Costs</Link>
+            <Link className='header-link' to='/'>Costs</Link>
+            {/* <Link to='/income'>Income</Link> */}
+            <Link to='/purchase'>Purchase</Link>
         </header>
     );
 }

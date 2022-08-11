@@ -1,5 +1,6 @@
 .layout{
-    background-image: url("https://media.istockphoto.com/vectors/dollar-seamless-pattern-background-vector-illustration-vector-id907639582?b=1&k=20&m=907639582&s=612x612&w=0&h=ZDlvAR3D8zMaDXUzKbty7X3BM7oz_qLVfMi4EbE7jLU=") ;
+    /* background-image: url("https://media.istockphoto.com/vectors/dollar-seamless-pattern-background-vector-illustration-vector-id907639582?b=1&k=20&m=907639582&s=612x612&w=0&h=ZDlvAR3D8zMaDXUzKbty7X3BM7oz_qLVfMi4EbE7jLU=") ; */
+    background-color: rgb(131, 203, 148);
     background-position: center;
     background-size: cover;
     height: 100vh;
