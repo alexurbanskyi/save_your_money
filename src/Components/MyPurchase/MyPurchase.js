@@ -13,6 +13,32 @@ function  MyPurchase(props) {
     console.log('type ---->', type)
     console.log('date----->', date)
 
+
+    const categoryList = {
+        food: ['milk', 'bread', 'water', 'snack'],
+        transport: ['ticket'],
+        car:['fuel', 'repair'],
+        "bad habits": ['beer', 'coffee', 'cigarettes']
+    }
+
+    let dateParam = null; 
+    date&&(dateParam = date.split('-'))
+    console.log('dataPARAM --->', dateParam)
+
+    const categoryItem = Object.keys(categoryList)
+    console.log(categoryItem)
+
+    let isCategory = false;
+    category ? isCategory = false : isCategory = true
+
+    let isFormComplited = true
+    price&&category&&type&&date&&(isFormComplited = false)
+
+    console.log('isForm ---->', isFormComplited)
+    const addData = () =>{
+        console.log('<_____________ADD')
+    }
+
     return (
         <div className='coast'>
             <div className='coast-title'> NEW PURCHASE</div>
@@ -24,23 +50,22 @@ function  MyPurchase(props) {
                 <p className='input-title'>CATEGORY</p>
                 <select className='select' defaultValue='' value={category} onChange={(e) => setCategory(e.target.value)}>
                         <option value="" disabled>category</option>
-                        <option value="food">food</option>
-                        <option value="transport">transport</option>
-                        <option value="bad habits">bad habits</option>
-                        <option value='other'>other</option>
+                        {
+                            categoryItem.map((item) => <option value={item}>{item}</option>)
+                        }
                 </select>
                 <p className='input-title'>TYPE</p>
-                <select className='select' defaultValue='' value={type} onChange={(e) => setType(e.target.value)}>
+                <select className='select' defaultValue='' disabled={isCategory} value={type} onChange={(e) => setType(e.target.value)}>
                         <option value="" disabled>type</option>
-                        <option value="coffee">coffee</option>
-                        <option value="cigarettes">cigarettes</option>
-                        <option value="ticket">ticket</option>
-                        <option value="water">water</option>
-                        <option value='other'>other</option>
+                        {
+                            !isCategory&& categoryList[category].map((item) => <option value={item}>{item}</option> ) 
+                        }
                 </select>
-                
-             
-                <button>ADD</button>
+                <button 
+                    className={!isFormComplited ? 'add-btn' : ['add-btn' , 'disable'].join(' ')} 
+                    disabled={isFormComplited}
+                    onClick={addData}
+                >ADD PURCHASE</button>
             </div>
 
         </div>

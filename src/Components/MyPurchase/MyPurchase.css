@@ -50,4 +50,20 @@ input:focus {
     border-bottom: 2px solid black ;
     outline: none;
  }
+ .add-btn{
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #3d7237;
+    color: #ddea54;
+    font-family: 'DynaPuff', cursive;
+    letter-spacing: 2.5px;
+    font-size: 1rem;
+    transition: all ease-in-out 0.5s;
+ }
+ .disable{
+    color: #ddea54;
+    background: rgb(153, 151, 151);
+ }
  
