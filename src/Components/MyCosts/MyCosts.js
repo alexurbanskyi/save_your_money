@@ -14,9 +14,10 @@ function MyCosts(props) {
     console.log('generall ->>>', generalCosts)
 
     return (
-        <div className='budget'>
-            <div className='budget-title'>MY COSTS</div>
-            <div className='budget-value'>{generalCosts}</div>
+        <div className='costs'>
+            <div className='costs-title'>MY COSTS</div>
+            <div className='costs-value'>{generalCosts}</div>
+           
         </div>
     );
 }

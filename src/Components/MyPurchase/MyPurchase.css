@@ -1,4 +1,4 @@
-.coast-title {
+.purchase-title {
     text-align: center;
     font-size: 2rem;
     padding: 20px 0;
@@ -65,5 +65,33 @@ input:focus {
  .disable{
     color: #ddea54;
     background: rgb(153, 151, 151);
+ }
+ .purchase-list{
+    margin-top: 20px;
+    max-height: 200px;
+    background: #3d7237;
+    color: #ddea54;
+    width:100%;
+    padding: 5px 0;
+    overflow: auto;
+   
+ }
+ .purchase-note{
+    color:#356230; 
+    font-size: 1.5rem;
+    padding-top: 20px;
+
+ }
+ .purchase-element{
+    display: flex;
+    justify-content: center;
+ }
+ .element-title{
+    width: 33%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-family: 'DynaPuff', cursive;
  }
  
