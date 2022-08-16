@@ -71,7 +71,7 @@ input:focus {
     max-height: 200px;
     background: #3d7237;
     color: #ddea54;
-    width:100%;
+    width: 100%;
     padding: 5px 0;
     overflow: auto;
    
@@ -80,18 +80,32 @@ input:focus {
     color:#356230; 
     font-size: 1.5rem;
     padding-top: 20px;
+    font-family: 'DynaPuff', cursive;
 
  }
  .purchase-element{
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
  }
  .element-title{
-    width: 33%;
+    width: 30%;
     margin: 0 auto;
-    text-align: center;
+    text-align: start;
     padding: 5px 0;
     text-transform: uppercase;
     font-family: 'DynaPuff', cursive;
+   
  }
+ .del-btn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;    
+    z-index: 100;
+    background-color: rgb(98, 151, 77);
+    height: 70%;
+    cursor: pointer;
+}
  

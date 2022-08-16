@@ -4,6 +4,7 @@ import  {useDispatch} from 'react-redux'
 import './MyPurchase.css'
 import { addPurchase } from '../../Slices/purchaseSlice';
 import { v4 as uuidv4 } from 'uuid';
+import { GrFormClose } from "react-icons/gr";
 
 
 function  MyPurchase(props) {
@@ -104,7 +105,8 @@ function  MyPurchase(props) {
                             <div className='purchase-element'>
                                 <p className='element-title'><span>{element.day}</span>.<span>{element.month}</span></p> 
                                 <p className='element-title'>{element.type}</p>
-                                <p className='element-title'>{element.price}</p>
+                                <p className='element-title'>{element.price} uah</p>
+                                <p className='del-btn'>{<GrFormClose/>}</p>
                             </div> )
                         }
                      </div> 
