@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import  {useDispatch} from 'react-redux'
 import './MyPurchase.css'
-import { addPurchase } from '../../Slices/purchaseSlice';
+import { addPurchase, delPurchase } from '../../Slices/purchaseSlice';
 import { v4 as uuidv4 } from 'uuid';
 import { GrFormClose } from "react-icons/gr";
 
@@ -20,7 +20,7 @@ function  MyPurchase(props) {
     //  console.log('categor ---->', category)
     //  console.log('type ---->', type)
     //  console.log('date----->', date)
-   
+   console.log(delPurchase)
 
 
     const categoryList = {
@@ -106,7 +106,7 @@ function  MyPurchase(props) {
                                 <p className='element-title'><span>{element.day}</span>.<span>{element.month}</span></p> 
                                 <p className='element-title'>{element.type}</p>
                                 <p className='element-title'>{element.price} uah</p>
-                                <p className='del-btn'>{<GrFormClose/>}</p>
+                                <p className='del-btn' onClick={() => dispatch(delPurchase(element.id))} >{<GrFormClose/>}</p>
                             </div> )
                         }
                      </div> 

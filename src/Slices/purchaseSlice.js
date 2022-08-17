@@ -14,9 +14,15 @@ const purchaseSlice = createSlice({
             console.log('PAYLOAD --->', payload)
             localStorage.setItem('purchase', JSON.stringify(state))
         },
+        delPurchase: (state, {payload}) => {
+            const filtredState =  state.filter((item) => item.id !== payload)
+            localStorage.setItem('purchase', JSON.stringify(filtredState))
+            return filtredState
+            console.log('from sliser', payload)
+        }
 
 
     }
 })
-export const {addPurchase} = purchaseSlice.actions
+export const {addPurchase, delPurchase} = purchaseSlice.actions
 export default purchaseSlice.reducer
