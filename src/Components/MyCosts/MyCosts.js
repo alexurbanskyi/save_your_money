@@ -4,8 +4,10 @@ import './MyCosts.css'
 
 function MyCosts(props) {
 
+    const [period, setPeriod]  = useState(null)
     const [periodCosts, setPeriodCosts] = useState(0)
-    
+    console.log('PERIOD--->',period)
+        
     const purchase = useSelector(state => state.purchase)
     console.log('purchase ----->',purchase)
 
@@ -14,6 +16,7 @@ function MyCosts(props) {
 
    useLayoutEffect(() =>{
         const dayCostsList = purchase.filter((elem) => elem.day === currentDate[0])
+        setPeriod('- TODAY -')
         const dayCosts = dayCostsList.reduce((acc, currentValue) => { 
             return(acc + currentValue.price*1)
         }, 0)
@@ -27,12 +30,14 @@ function MyCosts(props) {
             return(acc + currentValue.price*1)
         }, 0)
         setPeriodCosts(dayCosts)
+        setPeriod('- TODAY -')
    }
 
    const allTime = () => {
         const allTimeCosts = purchase.reduce((acc, currentValue) => { 
             return(acc + currentValue.price*1)
         }, 0)
+        setPeriod('- ALL TIME -')
         setPeriodCosts(allTimeCosts)
    }
    
@@ -44,6 +49,7 @@ function MyCosts(props) {
     return (
         <div className='costs'>
             <div className='costs-title'>MY COSTS</div>
+            <div className='period'>{period}</div>
             <div className='costs-value'>{periodCosts}</div>
             <div className='btn-holder'>
                 <button className='btn-period' onClick={todayCosts}>today</button>
