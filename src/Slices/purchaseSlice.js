@@ -18,8 +18,7 @@ const purchaseSlice = createSlice({
             const filtredState =  state.filter((item) => item.id !== payload)
             localStorage.setItem('purchase', JSON.stringify(filtredState))
             return filtredState
-            console.log('from sliser', payload)
-        }
+            }
 
 
     }

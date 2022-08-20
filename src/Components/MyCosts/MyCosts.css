@@ -12,3 +12,20 @@
     opacity: 0.9;
     color: #ddea54;
 }
+.btn-period{
+    width: 22%;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #3d7237;
+    color: #ddea54;
+    font-family: 'DynaPuff', cursive;
+    letter-spacing: 2.5px;
+    font-size: 0.5rem;
+    padding: 5px 0;
+}
+.btn-holder{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 15px 0;
+}

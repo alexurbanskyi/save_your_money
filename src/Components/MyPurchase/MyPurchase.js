@@ -20,7 +20,7 @@ function  MyPurchase(props) {
     //  console.log('categor ---->', category)
     //  console.log('type ---->', type)
     //  console.log('date----->', date)
-   console.log(delPurchase)
+   
 
 
     const categoryList = {
@@ -38,7 +38,7 @@ function  MyPurchase(props) {
 
     let dateParam = null; 
     date&&(dateParam = date.split('-'))
-     console.log('dataPARAM --->', dateParam)
+     
 
     const categoryItem = Object.keys(categoryList)
     // console.log(categoryItem)
