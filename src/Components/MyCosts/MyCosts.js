@@ -13,23 +13,27 @@ function MyCosts(props) {
     console.log('current date --->', currentDate)
 
    useLayoutEffect(() =>{
-        const generalCosts = purchase.reduce((acc, currentValue) => { 
-            return(acc + currentValue.price*1)
-        }, 0)
-        setPeriodCosts(generalCosts)
-   },[]); 
-
-   const todayCosts = () => {
-
         const dayCostsList = purchase.filter((elem) => elem.day === currentDate[0])
         const dayCosts = dayCostsList.reduce((acc, currentValue) => { 
             return(acc + currentValue.price*1)
         }, 0)
         setPeriodCosts(dayCosts)
-        
-        console.log('Day --->', dayCostsList)
-        console.log(dayCosts)
+   },[]); 
+   
 
+   const todayCosts = () => {
+        const dayCostsList = purchase.filter((elem) => elem.day === currentDate[0])
+        const dayCosts = dayCostsList.reduce((acc, currentValue) => { 
+            return(acc + currentValue.price*1)
+        }, 0)
+        setPeriodCosts(dayCosts)
+   }
+
+   const allTime = () => {
+        const allTimeCosts = purchase.reduce((acc, currentValue) => { 
+            return(acc + currentValue.price*1)
+        }, 0)
+        setPeriodCosts(allTimeCosts)
    }
    
     
@@ -42,10 +46,10 @@ function MyCosts(props) {
             <div className='costs-title'>MY COSTS</div>
             <div className='costs-value'>{periodCosts}</div>
             <div className='btn-holder'>
-                <button className='btn-period' onClick={()=>todayCosts()}>today</button>
+                <button className='btn-period' onClick={todayCosts}>today</button>
                 <button className='btn-period'>chosen date</button>
                 <button className='btn-period'>month</button>
-                <button className='btn-period'>all time</button>
+                <button className='btn-period' onClick={allTime}>all time</button>
             </div>
             
            
