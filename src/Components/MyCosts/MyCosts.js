@@ -3,8 +3,10 @@ import {useSelector} from "react-redux";
 import './MyCosts.css'
 import { categoryList } from '../../Constants/categoryList';
 import { GiCigarette } from "react-icons/gi";
-import { IoBeer } from "react-icons/io5";
+import { IoBeer , IoShirt } from "react-icons/io5";
 import { BiCoffeeTogo } from "react-icons/bi";
+import { TiShoppingCart } from "react-icons/ti";
+import { GiVacuumCleaner, GiArmoredPants } from "react-icons/gi";
 
 function MyCosts(props) {
 
@@ -76,13 +78,6 @@ function MyCosts(props) {
         valueCоunter(purchase)
    }
 
-
-
-
-  
-
-   
-
     return (
         <div className='costs'>
             <div className='costs-title'>MY COSTS</div>
@@ -95,7 +90,7 @@ function MyCosts(props) {
                 <button className='btn-period' onClick={allTime}>all time</button>
             </div>
             <div className='costs-category'>
-                <div className='category-title'>bad habits</div>
+                <div className='category-title'>- bad habits -</div>
                 <div className='type-holder'>
                     <div className='type-item'>
                         <GiCigarette className='type-icon'/>
@@ -109,7 +104,25 @@ function MyCosts(props) {
                         <BiCoffeeTogo className='type-icon' />
                         <p className='type-value'>{typeValue.coffee}</p>
                     </div>
+                    
                 </div>
+                <div className='category-title'>- shop -</div>
+                <div className='type-holder'>
+                    <div className='type-item'>
+                            <TiShoppingCart className='type-icon' />
+                            <p className='type-value'>{typeValue.food}</p>
+                    </div>
+                    <div className='type-item'>
+                            <IoShirt className='type-icon' />
+                            <p className='type-value'>{typeValue.clothing}</p>
+                    </div>
+                    <div className='type-item'>
+                            <GiVacuumCleaner className='type-icon' />
+                            <p className='type-value'>{typeValue.cleanliness}</p>
+                    </div>
+                </div>
+               
+               
                 
             </div>
             
