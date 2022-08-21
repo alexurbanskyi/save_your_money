@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import {useSelector} from "react-redux";
 import './MyCosts.css'
+import { categoryList } from '../../Constants/categoryList';
 import { GiCigarette } from "react-icons/gi";
 import { IoBeer } from "react-icons/io5";
 import { BiCoffeeTogo } from "react-icons/bi";
@@ -10,6 +11,7 @@ function MyCosts(props) {
     const [period, setPeriod]  = useState(null)
     const [periodCosts, setPeriodCosts] = useState(0)
     const [periodCostsList, setPeriodCostList] = useState(null)
+    const [typeValue, setTypeValue] = useState({});
     // console.log('PERIOD--->',period)
         
     const purchase = useSelector(state => state.purchase)
@@ -18,46 +20,65 @@ function MyCosts(props) {
     const currentDate = (new Date()).toLocaleDateString().split('.')
     // console.log('current date --->', currentDate)
 
+    // const categoryList = {
+    //     shop: ['food', 'clothing', 'cleanliness'],
+    //     hobby: ['fishing', 'gym'],
+    //     fun: ['cafe', 'birthday'],
+    //     transport: ['ticket'],
+    //     car:['fuel', 'repair'],
+    //     "bad habits": ['beer', 'coffee', 'cigarettes']
+    // }
+
+    const allPurchesType = [];
+    Object.values(categoryList).map((i)=> allPurchesType.push(...i))
+
+    function valueCоunter(list){
+        const valueObject = {};
+        allPurchesType.map((type) => valueObject[type] = list.filter((el) => el.type === type).reduce((acc, currentValue) => { 
+            return(acc + currentValue.price*1)
+        }, 0))
+        setTypeValue(valueObject)
+    }
+
+    console.log('typeValue --->', typeValue)  
+    
+  
+    
+
    useLayoutEffect(() =>{
         const dayCostsList = purchase.filter((elem) => elem.day === currentDate[0])
-        console.log('dayCostsList ---->', dayCostsList)
+         console.log('dayCostsList ---->', dayCostsList)
         setPeriodCostList(dayCostsList);
-        setPeriod('- TODAY -')
+        setPeriod('today')
         const dayCosts = dayCostsList.reduce((acc, currentValue) => { 
             return(acc + currentValue.price*1)
         }, 0)
         setPeriodCosts(dayCosts)
+        valueCоunter(dayCostsList)
    },[]); 
    
-   console.log('periodCostsList --->', periodCostsList)
-
-
    const todayCosts = () => {
         const dayCostsList = purchase.filter((elem) => elem.day === currentDate[0])
         const dayCosts = dayCostsList.reduce((acc, currentValue) => { 
             return(acc + currentValue.price*1)
         }, 0)
         setPeriodCosts(dayCosts)
-        setPeriod('- TODAY -')
+        setPeriod('today')
+        valueCоunter(dayCostsList)
    }
 
    const allTime = () => {
         const allTimeCosts = purchase.reduce((acc, currentValue) => { 
             return(acc + currentValue.price*1)
         }, 0)
-        setPeriod('- ALL TIME -')
         setPeriodCosts(allTimeCosts)
+        setPeriod('all time')
+        valueCоunter(purchase)
    }
-//    const categoryList = {
-//     shop: ['food', 'clothing', 'cleanliness'],
-//     hobby: ['fishing', 'gym'],
-//     fun: ['cafe', 'birthday'],
-//     transport: ['ticket'],
-//     car:['fuel', 'repair'],
-//     "bad habits": ['beer', 'coffee', 'cigarettes']
-// }
-   
-    
+
+
+
+
   
 
    
@@ -65,7 +86,7 @@ function MyCosts(props) {
     return (
         <div className='costs'>
             <div className='costs-title'>MY COSTS</div>
-            <div className='period'>{period}</div>
+            <div className='period'>- {period} -</div>
             <div className='costs-value'>{periodCosts}</div>
             <div className='btn-holder'>
                 <button className='btn-period' onClick={todayCosts}>today</button>
@@ -76,15 +97,17 @@ function MyCosts(props) {
             <div className='costs-category'>
                 <div className='category-title'>bad habits</div>
                 <div className='type-holder'>
-                    <div>
+                    <div className='type-item'>
                         <GiCigarette className='type-icon'/>
-                        <p>123</p>
+                        <p className='type-value'>{typeValue.cigarettes}</p>
                     </div>
-                    <div>
+                    <div className='type-item'>
                         <IoBeer className='type-icon'/>
+                        <p className='type-value'>{typeValue.beer}</p>
                     </div>
-                    <div>
+                    <div className='type-item'>
                         <BiCoffeeTogo className='type-icon' />
+                        <p className='type-value'>{typeValue.coffee}</p>
                     </div>
                 </div>
                 

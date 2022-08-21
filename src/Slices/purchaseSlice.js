@@ -11,7 +11,6 @@ const purchaseSlice = createSlice({
     reducers: {
         addPurchase: (state,{payload})=>{
             state.push(payload)
-            console.log('PAYLOAD --->', payload)
             localStorage.setItem('purchase', JSON.stringify(state))
         },
         delPurchase: (state, {payload}) => {

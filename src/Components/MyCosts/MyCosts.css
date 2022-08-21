@@ -17,6 +17,7 @@
     padding: 10px 0;
     font-family: 'DynaPuff', cursive;
     letter-spacing: 2.5px;
+    text-transform: uppercase;
 }
 .btn-period{
     width: 22%;
@@ -41,6 +42,23 @@
     letter-spacing: 2.0px;
 }
 .type-icon{
-    font-size: 20px;
+    font-size: 30px;
     color: #0f3f15;
+}
+.type-holder{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+.type-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+}
+.type-value{
+    font-size: 2rem;
+    font-family: 'DynaPuff', cursive;
+    color: #3d7237;
+
 }
